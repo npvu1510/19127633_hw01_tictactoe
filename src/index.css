@@ -1,13 +1,121 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.board-col:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square.winner {
+  background-color: yellow;
+  border: 3px black solid;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-board {
+  margin: 0 0 10px;
+}
+
+.game-col:not(.game-col-1) {
+  margin-left: 30px;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.game-record-item > div {
+  display: flex;
+  height: fit-content;
+  margin-bottom: 10px;
+}
+
+.game-record-item > div > button {
+  width: 120px;
+  height: fit-content;
+  margin-right: 20px;
+}
+
+.game-record-item > div > p {
+  min-width: fit-content;
+}
+
+.game-move-history li {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.game-status {
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+
+.sort-btn {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 30px;
+}
+
+.game-status.draw {
+  color: red;
+  font-weight: bold;
+}
+
+.game-status.win {
+  color: green;
+  font-weight: bold;
+}
+
+.label-normal {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.label--bold {
+  font-weight: bold;
 }
