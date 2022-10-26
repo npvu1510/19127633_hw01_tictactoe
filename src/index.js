@@ -63,8 +63,8 @@ class Game extends React.Component {
       ],
 
       // ingame
-      boardSize: 5,
-      conditionalWinner: 3,
+      boardSize: 3,
+      conditionalWinner: 5,
       winner: undefined,
       stepNumber: 0,
       isFinish: false,
@@ -255,6 +255,9 @@ class Game extends React.Component {
     this.setState({
       winner: undefined,
       stepNumber: step,
+      isFinish: this.state.history[step].squares.includes(undefined)
+        ? false
+        : true,
     });
   }
 
