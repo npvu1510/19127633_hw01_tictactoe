@@ -63,7 +63,7 @@ class Game extends React.Component {
       ],
 
       // ingame
-      boardSize: 5,
+      boardSize: 10,
       conditionalWinner: 5,
       winner: undefined,
       stepNumber: 0,
