@@ -63,8 +63,8 @@ class Game extends React.Component {
       ],
 
       // ingame
-      boardSize: 3,
-      conditionalWinner: 5,
+      boardSize: 5,
+      conditionalWinner: 3,
       winner: undefined,
       stepNumber: 0,
       isFinish: false,
@@ -252,8 +252,13 @@ class Game extends React.Component {
   }
 
   undo(step) {
+    const history = this.state.history[step];
+
     this.setState({
-      winner: undefined,
+      winner: this.checkWinner(
+        history.squares,
+        this.reverseIndex(history.movement.i, history.movement.j)
+      ),
       stepNumber: step,
       isFinish: this.state.history[step].squares.includes(undefined)
         ? false
